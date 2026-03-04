@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            /* Renkleri daha doygun ve canlı morlara çektik */
+            --ana-mor: #6d28d9;
+            --orta-mor: #8b5cf6;
+            --acik-mor: #ede9fe;
+            --yazi: #1f2937;
+            --beyaz: #ffffff;
+            --mor-golge: 0 15px 35px rgba(109, 40, 217, 0.3);
+        }
+
+        body {
+            /* Arka planı da hafif mor bir tona çektik */
+            background-color: #f5f3ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card-container > .card {
+            background: var(--beyaz);
+            width: 340px;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: var(--mor-golge);
+            text-align: center;
+            /* Kenarlık daha belirgin mor */
+            border-top: 10px solid var(--ana-mor);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* Fotoğraf etrafında mor halka */
+            border: 5px solid var(--acik-mor);
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(109, 40, 217, 0.2);
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: var(--ana-mor);
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .card h3 + p {
+            color: var(--yazi);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Mesaj Gönder Butonu */
+        .btn-mesaj {
+            display: block;
+            background: linear-gradient(135deg, var(--ana-mor), var(--orta-mor));
+            color: var(--beyaz);
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(109, 40, 217, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-mesaj:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(109, 40, 217, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* PDF Linki */
+        .card a[href$=".pdf"] {
+            display: inline-block;
+            color: var(--ana-mor);
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px dashed var(--orta-mor);
+            padding-bottom: 2px;
+        }
+
+        .card a[href$=".pdf"]::before {
+            content: "💜 ";
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="fotoğraf1.jpeg" alt="Profilim">
+            
+            <h3>Eylül Yağmur Gazelci</h3>
+            
+            <p>Merhaba! Ben bir web tasarım tutkunuyum. CSS değişkenleri ve modern seçicilerle harikalar yaratmayı seviyorum. Bana ulaşmak için aşağıdaki butonu kullanabilirsin!</p>
+            
+            <a href="mailto:eylulgazelci09@gmail.com?subject=Merhaba" class="btn-mesaj">Mesaj Gönder</a>
+            
+            
+        </div>
+    </div>
+
+</body>
+</html>
